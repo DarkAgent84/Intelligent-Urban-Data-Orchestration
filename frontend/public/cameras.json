@@ -1,0 +1,37 @@
+[
+    {
+        "source": "New Zealand",
+        "cameras": [
+            {
+                "desc": "South along Hinds Highway from Lagmhor Rd",
+                "direction": "Southbound",
+                "group": "NA",
+                "key": "714",
+                "latitude": -43.919632,
+                "longitude": 171.721055,
+                "name": "SH1 Tinwald",
+                "region": "Ashburton"
+            },
+            {
+                "desc": "South along Nthn Mwy from Wainui Rd",
+                "direction": "Southbound",
+                "group": "NA",
+                "key": "651",
+                "latitude": -36.6032731,
+                "longitude": 174.6617411,
+                "name": "SH1 Millwater",
+                "region": "Auckland"
+            },
+            {
+                "desc": "North along Sth Wstn Mwy from May Rd",
+                "direction": "Northbound",
+                "group": "NA",
+                "key": "653",
+                "latitude": -36.90943,
+                "longitude": 174.73442,
+                "name": "SH20 May Rd Overbridge",
+                "region": "Auckland"
+            }
+        ]
+    }
+]
