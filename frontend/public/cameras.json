@@ -1,37 +1,450 @@
 [
-    {
-        "source": "New Zealand",
-        "cameras": [
-            {
-                "desc": "South along Hinds Highway from Lagmhor Rd",
-                "direction": "Southbound",
-                "group": "NA",
-                "key": "714",
-                "latitude": -43.919632,
-                "longitude": 171.721055,
-                "name": "SH1 Tinwald",
-                "region": "Ashburton"
-            },
-            {
-                "desc": "South along Nthn Mwy from Wainui Rd",
-                "direction": "Southbound",
-                "group": "NA",
-                "key": "651",
-                "latitude": -36.6032731,
-                "longitude": 174.6617411,
-                "name": "SH1 Millwater",
-                "region": "Auckland"
-            },
-            {
-                "desc": "North along Sth Wstn Mwy from May Rd",
-                "direction": "Northbound",
-                "group": "NA",
-                "key": "653",
-                "latitude": -36.90943,
-                "longitude": 174.73442,
-                "name": "SH20 May Rd Overbridge",
-                "region": "Auckland"
-            }
-        ]
-    }
+  {
+    "id": "714",
+    "name": "SH1 Tinwald",
+    "region": "Ashburton",
+    "direction": "Southbound",
+    "lat": -43.919632,
+    "lon": 171.721055
+  },
+  {
+    "id": "651",
+    "name": "SH1 Millwater",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.6032731,
+    "lon": 174.6617411
+  },
+  {
+    "id": "653",
+    "name": "SH20 May Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.90943,
+    "lon": 174.73442
+  },
+  {
+    "id": "654",
+    "name": "SH16 Carrington Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.87173,
+    "lon": 174.71018
+  },
+  {
+    "id": "655",
+    "name": "SH16/20 Interchange South",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.871997,
+    "lon": 174.704836
+  },
+  {
+    "id": "723",
+    "name": "SH1 Redvale",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.685718,
+    "lon": 174.701202
+  },
+  {
+    "id": "697",
+    "name": "SH16 Rosebank Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.870049,
+    "lon": 174.673614
+  },
+  {
+    "id": "686",
+    "name": "SH16/20 Interchange North",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.871594,
+    "lon": 174.699344
+  },
+  {
+    "id": "687",
+    "name": "SH16 Patiki Rd",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.865869,
+    "lon": 174.666243
+  },
+  {
+    "id": "688",
+    "name": "SH16 Causeway",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.872107,
+    "lon": 174.689738
+  },
+  {
+    "id": "689",
+    "name": "SH16 Whau River",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.860564,
+    "lon": 174.6609
+  },
+  {
+    "id": "130",
+    "name": "SH16 Bond St Overbridge",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.869,
+    "lon": 174.746
+  },
+  {
+    "id": "140",
+    "name": "SH16/20 Interchange East",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.872,
+    "lon": 174.706
+  },
+  {
+    "id": "150",
+    "name": "SH16 Te Atatu Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.858,
+    "lon": 174.653
+  },
+  {
+    "id": "160",
+    "name": "SH16 Lincoln Rd South",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.849,
+    "lon": 174.632
+  },
+  {
+    "id": "170",
+    "name": "SH16 Lincoln Rd North",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.847,
+    "lon": 174.63
+  },
+  {
+    "id": "270",
+    "name": "SH16/SH18 Interchange South",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.819,
+    "lon": 174.614
+  },
+  {
+    "id": "271",
+    "name": "SH16/SH18 Interchange North",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.813,
+    "lon": 174.612
+  },
+  {
+    "id": "171",
+    "name": "SH18 Tauhinu Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.782,
+    "lon": 174.678
+  },
+  {
+    "id": "172",
+    "name": "SH18 Albany Hwy",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.757,
+    "lon": 174.703
+  },
+  {
+    "id": "173",
+    "name": "SH18 Greenhithe West",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.778,
+    "lon": 174.681
+  },
+  {
+    "id": "174",
+    "name": "SH18 Paul Matthews Rd",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.753,
+    "lon": 174.714
+  },
+  {
+    "id": "175",
+    "name": "SH18 Greenhithe Rd",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.771,
+    "lon": 174.686
+  },
+  {
+    "id": "176",
+    "name": "SH18 Schnapper Rock",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.765,
+    "lon": 174.691
+  },
+  {
+    "id": "177",
+    "name": "SH18 Upper Harbour Bridge",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.786,
+    "lon": 174.662
+  },
+  {
+    "id": "178",
+    "name": "SH18 Cuthill",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.763,
+    "lon": 174.7
+  },
+  {
+    "id": "70",
+    "name": "SH18 Squadron Dr",
+    "region": "Auckland",
+    "direction": "Eastbound",
+    "lat": -36.791,
+    "lon": 174.655
+  },
+  {
+    "id": "221",
+    "name": "SH18 Trig Rd",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.808,
+    "lon": 174.621
+  },
+  {
+    "id": "222",
+    "name": "SH18 Waiahora Creek",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.805,
+    "lon": 174.628
+  },
+  {
+    "id": "223",
+    "name": "SH18 Brigham Creek Interchange",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.8,
+    "lon": 174.638
+  },
+  {
+    "id": "224",
+    "name": "SH18 Hobsonville",
+    "region": "Auckland",
+    "direction": "Westbound",
+    "lat": -36.796,
+    "lon": 174.645
+  },
+  {
+    "id": "10",
+    "name": "SH1 Greville Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.735,
+    "lon": 174.717
+  },
+  {
+    "id": "20",
+    "name": "SH1 Tristram Ave",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.771763,
+    "lon": 174.742792
+  },
+  {
+    "id": "30",
+    "name": "SH1 Northcote Rd",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.789,
+    "lon": 174.753
+  },
+  {
+    "id": "40",
+    "name": "SH1 Esmonde Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.799,
+    "lon": 174.762
+  },
+  {
+    "id": "50",
+    "name": "SH1 Onewa Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.812,
+    "lon": 174.754
+  },
+  {
+    "id": "215",
+    "name": "SH1 Johnstones Hill Tunnels",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.531,
+    "lon": 174.677
+  },
+  {
+    "id": "598",
+    "name": "SH1 Dairy Flat",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.658354,
+    "lon": 174.666336
+  },
+  {
+    "id": "769",
+    "name": "SH1 Okura",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.669183,
+    "lon": 174.68074
+  },
+  {
+    "id": "610",
+    "name": "SH1 Bombay",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -37.192844,
+    "lon": 174.981959
+  },
+  {
+    "id": "611",
+    "name": "SH1 Nikau Rd",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.214557,
+    "lon": 175.0003
+  },
+  {
+    "id": "612",
+    "name": "SH1/SH2 Interchange",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -37.230209,
+    "lon": 175.01569
+  },
+  {
+    "id": "613",
+    "name": "SH1 Ramarama",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -37.143496,
+    "lon": 174.969213
+  },
+  {
+    "id": "212",
+    "name": "SH1/SH20 Interchange South",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.997,
+    "lon": 174.891
+  },
+  {
+    "id": "214",
+    "name": "SH1/SH20 Interchange North",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -37.0,
+    "lon": 174.892
+  },
+  {
+    "id": "80",
+    "name": "SH1 Greenlane Interchange",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.889,
+    "lon": 174.796
+  },
+  {
+    "id": "90",
+    "name": "SH1 South Eastern Hwy",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -36.915,
+    "lon": 174.826
+  },
+  {
+    "id": "100",
+    "name": "SH1 Redoubt Rd",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.992,
+    "lon": 174.888
+  },
+  {
+    "id": "110",
+    "name": "SH1 Bairds Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -36.957,
+    "lon": 174.861
+  },
+  {
+    "id": "120",
+    "name": "SH1 Alfriston Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Northbound",
+    "lat": -37.021,
+    "lon": 174.91
+  },
+  {
+    "id": "121",
+    "name": "SH1 Takanini",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.028,
+    "lon": 174.91
+  },
+  {
+    "id": "122",
+    "name": "SH1 Walter Strevens Dr Overbridge",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.044,
+    "lon": 174.913
+  },
+  {
+    "id": "123",
+    "name": "SH1 Pahurehure Inlet",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.053,
+    "lon": 174.918
+  },
+  {
+    "id": "124",
+    "name": "SH1 Papakura",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.062,
+    "lon": 174.924
+  },
+  {
+    "id": "125",
+    "name": "SH1 Park Estate Rd Overbridge",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.085,
+    "lon": 174.936
+  },
+  {
+    "id": "126",
+    "name": "SH1 Slippery Creek",
+    "region": "Auckland",
+    "direction": "Southbound",
+    "lat": -37.094,
+    "lon": 174.944
+  }
 ]
