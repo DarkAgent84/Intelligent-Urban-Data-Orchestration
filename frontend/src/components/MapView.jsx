@@ -38,7 +38,7 @@ const MapUpdater = ({ events }) => {
   
   useEffect(() => {
     if (events.length > 0) {
-      const bounds = events.map(e => [e.latitude, e.longitude]);
+      const bounds = events.map(e => [e.lat, e.lon]);
       map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
     }
   }, [events, map]);
