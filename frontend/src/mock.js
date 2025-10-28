@@ -20,8 +20,15 @@ export const loadCameras = async () => {
  * Randomly assign events to 20-30% of cameras
  */
 export const simulateEvents = (cameras) => {
+  if (cameras.length === 0) return [];
+  
   const percentage = 0.2 + Math.random() * 0.1; // 20-30%
-  const eventCount = Math.floor(cameras.length * percentage);
+  let eventCount = Math.floor(cameras.length * percentage);
+  
+  // Ensure at least 1 event for small camera counts
+  if (eventCount === 0 && cameras.length > 0) {
+    eventCount = 1;
+  }
   
   // Shuffle cameras and select random subset
   const shuffled = [...cameras].sort(() => Math.random() - 0.5);
