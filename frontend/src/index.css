@@ -81,16 +81,34 @@ code {
     }
 }
 
-/* Leaflet marker animation */
-@keyframes pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+/* Custom marker transitions */
+.custom-marker {
+  animation: markerFadeIn 0.5s ease-out;
+}
+
+@keyframes markerFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.8;
-  }
+}
+
+/* Marker hover effect */
+.leaflet-marker-icon:hover {
+  z-index: 1000 !important;
+}
+
+.custom-marker > div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leaflet-marker-icon:hover .custom-marker > div {
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 /* Custom scrollbar */
@@ -109,6 +127,15 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Leaflet popup custom styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
 }
 
 /* Remove default leaflet attribution positioning */

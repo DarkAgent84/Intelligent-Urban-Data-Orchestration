@@ -1,44 +1,67 @@
-// Mock data for urban events
+// Event simulation utilities for New Zealand camera monitoring
 
-const generateRandomEvent = () => {
-  const types = ['traffic', 'construction', 'accident', 'flood'];
-  const baseCoords = { lat: 19.0760, lon: 72.8777 };
-  
-  return {
-    id: Date.now() + Math.random(),
-    lat: baseCoords.lat + (Math.random() - 0.5) * 0.1,
-    lon: baseCoords.lon + (Math.random() - 0.5) * 0.1,
-    type: types[Math.floor(Math.random() * types.length)],
-    confidence: Math.random() * 0.3 + 0.7 // 0.7 to 1.0
-  };
+const eventTypes = ['fire', 'dense_traffic', 'sparse_traffic', 'accident'];
+
+/**
+ * Load cameras from JSON file
+ */
+export const loadCameras = async () => {
+  try {
+    const response = await fetch('/cameras.json');
+    const data = await response.json();
+    return data[0].cameras; // Extract cameras array from the structure
+  } catch (error) {
+    console.error('Error loading cameras:', error);
+    return [];
+  }
 };
 
-export const initialEvents = [
-  { id: 1, lat: 19.07, lon: 72.88, type: 'traffic', confidence: 0.94 },
-  { id: 2, lat: 19.05, lon: 72.90, type: 'construction', confidence: 0.87 },
-  { id: 3, lat: 19.08, lon: 72.84, type: 'flood', confidence: 0.75 },
-  { id: 4, lat: 19.06, lon: 72.86, type: 'accident', confidence: 0.91 },
-  { id: 5, lat: 19.09, lon: 72.89, type: 'traffic', confidence: 0.82 },
-  { id: 6, lat: 19.04, lon: 72.87, type: 'construction', confidence: 0.78 },
-  { id: 7, lat: 19.075, lon: 72.85, type: 'accident', confidence: 0.88 },
-  { id: 8, lat: 19.065, lon: 72.92, type: 'flood', confidence: 0.69 }
-];
+/**
+ * Randomly assign events to 20-30% of cameras
+ */
+export const simulateEvents = (cameras) => {
+  const percentage = 0.2 + Math.random() * 0.1; // 20-30%
+  const eventCount = Math.floor(cameras.length * percentage);
+  
+  // Shuffle cameras and select random subset
+  const shuffled = [...cameras].sort(() => Math.random() - 0.5);
+  const selectedCameras = shuffled.slice(0, eventCount);
+  
+  // Assign random events
+  return selectedCameras.map(camera => ({
+    ...camera,
+    eventType: eventTypes[Math.floor(Math.random() * eventTypes.length)],
+    detectedAt: new Date().toISOString(),
+    confidence: Math.random() * 0.3 + 0.7 // 0.7 to 1.0
+  }));
+};
 
-export const simulateRefresh = (currentEvents) => {
-  const newEvents = [...currentEvents];
+/**
+ * Get the most recent event from the events list
+ */
+export const getMostRecentEvent = (events) => {
+  if (events.length === 0) return null;
+  return events.reduce((latest, event) => {
+    return new Date(event.detectedAt) > new Date(latest.detectedAt) ? event : latest;
+  });
+};
+
+/**
+ * Calculate statistics for events
+ */
+export const calculateStats = (events) => {
+  const stats = {
+    fire: 0,
+    dense_traffic: 0,
+    sparse_traffic: 0,
+    accident: 0
+  };
   
-  // Remove 1-2 random events
-  const removeCount = Math.floor(Math.random() * 2) + 1;
-  for (let i = 0; i < removeCount && newEvents.length > 3; i++) {
-    const randomIndex = Math.floor(Math.random() * newEvents.length);
-    newEvents.splice(randomIndex, 1);
-  }
+  events.forEach(event => {
+    if (stats[event.eventType] !== undefined) {
+      stats[event.eventType]++;
+    }
+  });
   
-  // Add 2-3 new events
-  const addCount = Math.floor(Math.random() * 2) + 2;
-  for (let i = 0; i < addCount; i++) {
-    newEvents.push(generateRandomEvent());
-  }
-  
-  return newEvents;
+  return stats;
 };
