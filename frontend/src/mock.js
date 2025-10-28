@@ -9,7 +9,27 @@ export const loadCameras = async () => {
   try {
     const response = await fetch('/cameras.json');
     const data = await response.json();
-    return data[0].cameras; // Extract cameras array from the structure
+    
+    // Handle different JSON structures
+    // If it's a nested structure with [0].cameras
+    if (Array.isArray(data) && data[0]?.cameras) {
+      return data[0].cameras.map(cam => ({
+        ...cam,
+        lat: cam.latitude,
+        lon: cam.longitude,
+        key: cam.key || cam.id
+      }));
+    }
+    
+    // If it's a direct array of cameras
+    if (Array.isArray(data)) {
+      return data.map(cam => ({
+        ...cam,
+        key: cam.id || cam.key
+      }));
+    }
+    
+    return [];
   } catch (error) {
     console.error('Error loading cameras:', error);
     return [];
