@@ -65,7 +65,7 @@ const MapView = ({ events }) => {
         {events.map((event) => (
           <Marker
             key={event.key}
-            position={[event.latitude, event.longitude]}
+            position={[event.lat, event.lon]}
             icon={icons[event.eventType]}
           >
             <Popup>
@@ -91,10 +91,12 @@ const MapView = ({ events }) => {
                     <div className="text-xs text-gray-500 uppercase tracking-wide">Direction</div>
                     <div className="text-gray-800">{event.direction}</div>
                   </div>
-                  <div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wide">Description</div>
-                    <div className="text-gray-800 text-xs">{event.desc}</div>
-                  </div>
+                  {event.desc && (
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Description</div>
+                      <div className="text-gray-800 text-xs">{event.desc}</div>
+                    </div>
+                  )}
                   <div className="pt-2 border-t border-gray-200">
                     <div className="flex justify-between items-center">
                       <span className="text-xs text-gray-500">Detected:</span>
